@@ -112,7 +112,7 @@
 <div class="header">
 	<div class="container">		
 		<div class="logo">
-			<h1 ><a href="index.php">CHIPAY<span>SRM Shit 	Foods</span></a></h1>
+			<h1 ><a href="index.php">CHIPAY<span>SRM Good 	Foods</span></a></h1>
 		</div>
 	</div>
 </div>

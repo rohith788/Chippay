@@ -41,6 +41,11 @@ if(!empty($_GET["action"])) {
 <HTML>
 <HEAD>
 <TITLE>Simple PHP Shopping Cart</TITLE>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta property="og:title" content="Vide">
+<meta name="keywords" content="Big store Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design">
 <!--  <link href="style.css" type="text/css" rel="stylesheet" /> -->
 
 <script type="application/x-javascript"> 
@@ -124,7 +129,7 @@ body {margin:0;}
 
 <div class="navbar navbar-fixed-bottom">
  <div class="icon-bar">
-  <a  href="#" "><i class="fa fa-home"></i></a> 
+  <a  href="index.php" "><i class="fa fa-home"></i></a> 
   <!-- <a href="#"><i class="fa fa-search"></i></a>  -->
   <a href="profile.php" ><i class="fa fa-user"></i></a> 
   <a href="menu.php" ><i class="fa fa-book"></i></a>
@@ -141,7 +146,7 @@ body {margin:0;}
 		<div class="container">
 			
 			<div class="logo">
-				<h1><a href="index.php">CHIPAY<span>SRM Shit Foods</span></a></h1>
+				<h1><a href="index.php">CHIPAY<span>SRM Good Foods</span></a></h1>
 			</div>
 			<div>
 				<a href="login.php"><i class="fa fa-user abc" aria-hidden="true"></i>Login</a></li></right>
@@ -179,10 +184,11 @@ body {margin:0;}
 
 						<div class="btnRemoveAction" id="remove<?php echo $item["code"]; ?>"><a href="shopping_cart.php?action=remove&code=<?php echo $item["code"]; ?>" title="Remove from Cart">x</a></div>
 				
-						<div class="product-image offer-img"><img src="<?php echo $product_info[0]["image"]; ?>" class="img-responsive"></div>
+						<div class="product-image offer-img">
+						<img src="<?php echo $product_array[$key]["image"]; ?>" class="img-responsive" alt=""></div>
 						<div class="mid-1"><div class="women"><?php echo $item["name"]; ?></div></div>
 						<div class="product-price  	add add-2"><?php echo "Rs".$item["price"]; ?></div>
-						<div class= "mid-2 add">Quantity: <input type="text" name="quantity" id="<?php echo $item["code"]; ?>" value="<?php echo $item["quantity"]; ?>" size="2" onBlur="saveCart(this);" /></div>
+						<div class= "mid-2 add">Quantity: <input type="text" name="quantity" class="box" id="<?php echo $item["code"]; ?>" value="<?php echo $item["quantity"]; ?>" size="2" onBlur="saveCart(this);" /></div>
 						
 					
 					</form>
@@ -195,17 +201,15 @@ body {margin:0;}
 			
 		</div>
 	</div>
-</div>
 
-
-<footer class="pls">
-	<div class="cart_footer_link">
-	<div>Total Price: <span id="total_price"><?php echo "Rs". number_format($total_price,2); ?></span></div>
+<div class="cart_footer_link col-md-12">
+<center>	Total Price: <span id="total_price"><?php echo "Rs". number_format($total_price,2); ?></span>
+	<section>
 	<button class="btnAddAction btn btn-danger my-cart-btn my-cart-b">
-	<a href="shopping_cart.php?action=empty">Clear Cart</a></button>
+	<a href="shopping_cart.php?action=empty">Clear Cart</a></button></section>
 	<button class="btnAddAction btn btn-danger my-cart-btn my-cart-b"><a href="index.php" title="Cart">Continue Shopping</a></button>
-	</div>
-</footer>
+</center>	
+</div>
 
 
 <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
@@ -238,8 +242,24 @@ function saveCart(obj) {
 	.product-image {
     height:100px;
     width:130px;
-    background-color:#FFF;
-}
+    background-color:#FFF;}
+    .con1{
+    	margin-bottom: 10px;
+    	position: relative;
+    }
+    .container{
+    	bottom: 20px;
+    }
+    .cart_footer_link{
+    padding-bottom: 20%;
+	z-index : 9999;	
+	}
+	#shopping-cart{
+		overflow : scroll;
+		text-align: center;
+
+	}
+
 </style>
 </BODY>
 </HTML>
